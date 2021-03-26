@@ -68,7 +68,7 @@ namespace Kalkulacka
 
                 case "%":
                     if (variab.number1 != 0)
-                        result = OperationModul.Instance.Divided(variab.number1, variab.number2);
+                        result = OperationModul.Instance.Modulo(variab.number1, variab.number2);
                     else MessageBox.Show("U modula nemuze byt 0");
                     break;
 
