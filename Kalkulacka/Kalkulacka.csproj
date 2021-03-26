@@ -46,12 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data.cs" />
+    <Compile Include="DataHolders\ResultHolder.cs" />
     <Compile Include="KalkulackaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KalkulackaForm.Designer.cs">
       <DependentUpon>KalkulackaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperationModul.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="KalkulackaForm.resx">
