@@ -42,6 +42,13 @@ namespace Kalkulacka
             return holder;
         }
 
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+
         public ResultHolder Minus(double a, double b)
         {
             ResultHolder holder = new ResultHolder();
@@ -51,6 +58,13 @@ namespace Kalkulacka
             return holder;
         }
 
+
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public ResultHolder Times(double a, double b)
         {
             ResultHolder holder = new ResultHolder();
@@ -59,6 +73,13 @@ namespace Kalkulacka
 
             return holder;
         }
+
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
 
         public ResultHolder Divided(double a, double b)
         {
@@ -69,6 +90,13 @@ namespace Kalkulacka
             return holder;
         }
 
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+
         public ResultHolder Modulo(double a, double b)
         {
             ResultHolder holder = new ResultHolder();
@@ -77,6 +105,13 @@ namespace Kalkulacka
 
             return holder;
         }
+
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
 
         public ResultHolder Sin(double a)
         {
@@ -87,6 +122,12 @@ namespace Kalkulacka
             return holder;
         }
 
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+
         public ResultHolder Cos(double a)
         {
             ResultHolder holder = new ResultHolder();
@@ -95,6 +136,12 @@ namespace Kalkulacka
 
             return holder;
         }
+
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
 
         public ResultHolder Tan(double a)
         {
@@ -105,6 +152,12 @@ namespace Kalkulacka
             return holder;
         }
 
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+
         public ResultHolder Cotan(double a)
         {
             ResultHolder holder = new ResultHolder();
@@ -113,6 +166,12 @@ namespace Kalkulacka
 
             return holder;
         }
+
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
 
         public ResultHolder SquereRoot(double a)
         {
@@ -123,6 +182,12 @@ namespace Kalkulacka
             return holder;
         }
 
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+
         public ResultHolder Cube(double a)
         {
             ResultHolder holder = new ResultHolder();
@@ -130,6 +195,13 @@ namespace Kalkulacka
             holder.ResultString = $"{a}^3 = {holder.Result}";
             return holder;
         }
+
+        /// <summary>
+        /// TBD
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
 
         public ResultHolder Power(double a, double b)
         {

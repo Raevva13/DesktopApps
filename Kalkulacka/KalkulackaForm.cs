@@ -19,99 +19,102 @@ namespace Kalkulacka
             plus, minus, times, divided
         };
 
-        Data data;
+        Variables variab;
 
         public KalkulackaForm()
         {
-            data = new Data();
+            variab = new Variables();
 
             InitializeComponent();
             operationComboBox1.SelectedIndex = 0;
         }
 
+
+        //after click to the calculateButton
         private void calculateButton_Click(object sender, EventArgs e)
         {
 
-            // definování proměnných
-            data.operation = operationComboBox1.SelectedItem.ToString();
-            data.number1 = Convert.ToDouble(number1NumericUpDown.Value);
-            data.number2 = Convert.ToDouble(number2NumericUpDown.Value);
+            // properties 
+            variab.operation = operationComboBox1.SelectedItem.ToString();
+            variab.number1 = Convert.ToDouble(number1NumericUpDown.Value);
+            variab.number2 = Convert.ToDouble(number2NumericUpDown.Value);
 
 
             /*Singleton call*/
 
             ResultHolder result = new ResultHolder();
 
-
-            switch (data.operation)
+            // choice from operations
+            switch (variab.operation)
             {
                 case "+":
-                    result = OperationModul.Instance.Plus(data.number1, data.number2);
+                    result = OperationModul.Instance.Plus(variab.number1, variab.number2);
                     break;
 
                 case "-":
-                    result = OperationModul.Instance.Minus(data.number1, data.number2);
+                    result = OperationModul.Instance.Minus(variab.number1, variab.number2);
                     break;
 
                 case "*":
-                    result = OperationModul.Instance.Times(data.number1, data.number2);
+                    result = OperationModul.Instance.Times(variab.number1, variab.number2);
                     break;
 
                 case "/":
-                    if (data.number2 != 0)
-                     result = OperationModul.Instance.Divided(data.number1, data.number2); 
+                    if (variab.number2 != 0)
+                     result = OperationModul.Instance.Divided(variab.number1, variab.number2); 
                     else { MessageBox.Show("Nulou nelze delit"); }
                     break;
 
                 case "%":
-                    if (data.number1 != 0)
-                        result = OperationModul.Instance.Divided(data.number1, data.number2);
+                    if (variab.number1 != 0)
+                        result = OperationModul.Instance.Divided(variab.number1, variab.number2);
                     else MessageBox.Show("U modula nemuze byt 0");
                     break;
 
                 case "sin°":
                     MessageBox.Show("zadejte jen leve cislo (predstavujici stupne)");
-                    result = OperationModul.Instance.Sin(data.number1);
+                    result = OperationModul.Instance.Sin(variab.number1);
                     break;
 
                 case "cos°":
                     MessageBox.Show("zadejte jen leve cislo (predstavujici stupne)");
-                    result = OperationModul.Instance.Cos(data.number1);
+                    result = OperationModul.Instance.Cos(variab.number1);
                     break;
 
                 case "tan°":
                     MessageBox.Show("zadejte jen leve cislo (predstavujici stupne)");
-                    result = OperationModul.Instance.Tan(data.number1);
+                    result = OperationModul.Instance.Tan(variab.number1);
                     break;
 
                 case "cotan°":
                     MessageBox.Show("pro zadani goniometricky funkci postaci zadani leveho cisla)");
-                    result = OperationModul.Instance.Cotan(data.number1);
+                    result = OperationModul.Instance.Cotan(variab.number1);
                     break;
 
                 case "x^2":
                     MessageBox.Show("pro mocninu zadejte pouze leve cislo");
-                    result = OperationModul.Instance.SquereRoot(data.number1);
+                    result = OperationModul.Instance.SquereRoot(variab.number1);
                     break;
 
                 case "x^3":
                     MessageBox.Show("pro mocninu zadejte pouze leve cislo");
-                    result = OperationModul.Instance.Cube(data.number1);
+                    result = OperationModul.Instance.Cube(variab.number1);
                     break;
 
                 case "x^y":
                     MessageBox.Show("leve cislo predstavuje x\nprave cislo y");
-                    result = OperationModul.Instance.Power(data.number1, data.number2);
+                    result = OperationModul.Instance.Power(variab.number1, variab.number2);
                     break;
 
 
             }
-            //resultLabel.Text = result.ResultString;
 
+            // display of result and calculation
             textBoxResult.Text = result.Result.ToString();
             textBoxCalculation.Text = result.ResultString;
-            resultLabel.Text = result.Result.ToString();
-            labelCalcul.Text = result.ResultString;
+            //resultLabel.Text = result.Result.ToString();
+            //labelCalcul.Text = result.ResultString;
+
 
 
 

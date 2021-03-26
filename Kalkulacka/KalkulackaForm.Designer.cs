@@ -30,12 +30,10 @@ namespace Kalkulacka
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.resultLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
             this.number1NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.operationComboBox1 = new System.Windows.Forms.ComboBox();
             this.number2NumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.labelCalcul = new System.Windows.Forms.Label();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.textBoxCalculation = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.number1NumericUpDown)).BeginInit();
@@ -50,16 +48,6 @@ namespace Kalkulacka
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "=";
-            // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.resultLabel.Location = new System.Drawing.Point(248, 221);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(16, 17);
-            this.resultLabel.TabIndex = 1;
-            this.resultLabel.Text = "0";
             // 
             // calculateButton
             // 
@@ -126,15 +114,6 @@ namespace Kalkulacka
             this.number2NumericUpDown.Size = new System.Drawing.Size(79, 20);
             this.number2NumericUpDown.TabIndex = 5;
             // 
-            // labelCalcul
-            // 
-            this.labelCalcul.AutoSize = true;
-            this.labelCalcul.Location = new System.Drawing.Point(207, 161);
-            this.labelCalcul.Name = "labelCalcul";
-            this.labelCalcul.Size = new System.Drawing.Size(35, 13);
-            this.labelCalcul.TabIndex = 6;
-            this.labelCalcul.Text = "calcul";
-            // 
             // textBoxResult
             // 
             this.textBoxResult.Location = new System.Drawing.Point(286, 51);
@@ -160,12 +139,10 @@ namespace Kalkulacka
             this.ClientSize = new System.Drawing.Size(412, 327);
             this.Controls.Add(this.textBoxCalculation);
             this.Controls.Add(this.textBoxResult);
-            this.Controls.Add(this.labelCalcul);
             this.Controls.Add(this.number2NumericUpDown);
             this.Controls.Add(this.operationComboBox1);
             this.Controls.Add(this.number1NumericUpDown);
             this.Controls.Add(this.calculateButton);
-            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "KalkulackaForm";
@@ -181,12 +158,10 @@ namespace Kalkulacka
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.NumericUpDown number1NumericUpDown;
         private System.Windows.Forms.ComboBox operationComboBox1;
         private System.Windows.Forms.NumericUpDown number2NumericUpDown;
-        private System.Windows.Forms.Label labelCalcul;
         private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.TextBox textBoxCalculation;
     }

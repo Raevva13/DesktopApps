@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kalkulacka
 {
-    public class Data
+    public class Variables
     {
         public string operation;
         public double number1;
