@@ -137,7 +137,7 @@ namespace Kalkulacka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 327);
+            this.ClientSize = new System.Drawing.Size(414, 111);
             this.Controls.Add(this.textBoxCalculation);
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.number2NumericUpDown);
@@ -146,6 +146,8 @@ namespace Kalkulacka
             this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(430, 150);
+            this.MinimumSize = new System.Drawing.Size(430, 150);
             this.Name = "KalkulackaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kalkulacka";
