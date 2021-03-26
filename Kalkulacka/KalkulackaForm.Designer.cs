@@ -78,7 +78,7 @@ namespace Kalkulacka
             // 
             // operationComboBox1
             // 
-            this.operationComboBox1.FormattingEnabled = true;
+            this.operationComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.operationComboBox1.Items.AddRange(new object[] {
             "+",
             "-",
@@ -96,6 +96,7 @@ namespace Kalkulacka
             this.operationComboBox1.Name = "operationComboBox1";
             this.operationComboBox1.Size = new System.Drawing.Size(63, 21);
             this.operationComboBox1.TabIndex = 4;
+            this.operationComboBox1.SelectedValueChanged += new System.EventHandler(this.calculateButton_Click);
             // 
             // number2NumericUpDown
             // 
