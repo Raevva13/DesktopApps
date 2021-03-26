@@ -12,11 +12,12 @@ using Kalkulacka.DataHolders;
 
 namespace Kalkulacka
 {
-    public partial class KalkulackaForm : Form
+    public partial class KalkulackaForm 
+        : Form
     {
         public enum Operations
         {
-            plus, minus, times, divided
+            plus, minus, times, divided, modulo, sin, cos, tan, cotan, squereRoot, cubes, power
         };
 
         Variables variab;
@@ -112,6 +113,7 @@ namespace Kalkulacka
             // display of result and calculation
             textBoxResult.Text = result.Result.ToString();
             textBoxCalculation.Text = result.ResultString;
+
             //resultLabel.Text = result.Result.ToString();
             //labelCalcul.Text = result.ResultString;
 
