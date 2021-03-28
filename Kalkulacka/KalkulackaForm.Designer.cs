@@ -36,6 +36,7 @@ namespace Kalkulacka
             this.number2NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.textBoxCalculation = new System.Windows.Forms.TextBox();
+            this.labelWarning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.number1NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.number2NumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -133,12 +134,21 @@ namespace Kalkulacka
             this.textBoxCalculation.TabIndex = 8;
             this.textBoxCalculation.Text = "vypocet";
             // 
+            // labelWarning
+            // 
+            this.labelWarning.AutoSize = true;
+            this.labelWarning.Location = new System.Drawing.Point(96, 77);
+            this.labelWarning.Name = "labelWarning";
+            this.labelWarning.Size = new System.Drawing.Size(0, 13);
+            this.labelWarning.TabIndex = 9;
+            // 
             // KalkulackaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 111);
+            this.Controls.Add(this.labelWarning);
             this.Controls.Add(this.textBoxCalculation);
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.number2NumericUpDown);
@@ -168,6 +178,7 @@ namespace Kalkulacka
         private System.Windows.Forms.NumericUpDown number2NumericUpDown;
         private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.TextBox textBoxCalculation;
+        private System.Windows.Forms.Label labelWarning;
     }
 }
 
