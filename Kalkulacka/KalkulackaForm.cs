@@ -32,12 +32,10 @@ namespace Kalkulacka
             plus, minus, times, divided, modulo, sin, cos, tan, cotan, squereRoot, cubes, power
         };
 
-        //Variables variab;
-
         public KalkulackaForm()
         {
             InitializeComponent();
-            operationComboBox1.SelectedIndex = 0;
+            operationComboBox1.SelectedIndex = 0; // starting value "+"
         }
 
 
@@ -48,14 +46,14 @@ namespace Kalkulacka
         /// <param name="e">Event args.</param>        
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            labelWarning.Text = string.Empty;
+            labelWarning.Text = string.Empty; //information label
 
 
 
-            // properties 
-            selectedOperation = (Operations)operationComboBox1.SelectedIndex;
-            varA = Convert.ToDouble(number1NumericUpDown.Value);
-            varB = Convert.ToDouble(number2NumericUpDown.Value);
+            // variables 
+            selectedOperation = (Operations)operationComboBox1.SelectedIndex; // select operation 
+            varA = Convert.ToDouble(number1NumericUpDown.Value); //convert to the number 
+            varB = Convert.ToDouble(number2NumericUpDown.Value); // convert to the number
 
 
 
@@ -64,70 +62,70 @@ namespace Kalkulacka
             // choice from operations
             switch (selectedOperation)
             {
-                case Operations.plus:
-                    result = OperationModul.Instance.Plus(varA, varB);
+                case Operations.plus: 
+                    result = OperationModul.Instance.Plus(varA, varB); //Singleton call
                     break;
 
                 case Operations.minus:
-                    result = OperationModul.Instance.Minus(varA, varB);
+                    result = OperationModul.Instance.Minus(varA, varB); //Singleton call
                     break;
 
                 case Operations.times:
-                    result = OperationModul.Instance.Times(varA, varB);
+                    result = OperationModul.Instance.Times(varA, varB); //Singleton call
                     break;
 
                 case Operations.divided:
-                    if (varB != 0) result = OperationModul.Instance.Divided(varA, varB); 
-                    else MessageBox.Show("Nulou nelze delit"); 
+                    if (varB != 0) result = OperationModul.Instance.Divided(varA, varB); //Singleton call
+                    else MessageBox.Show("Nulou nelze delit"); // information warning
                     break;
 
                 case Operations.modulo:
-                    if (varA != 0) result = OperationModul.Instance.Modulo(varA, varB);
-                    else MessageBox.Show("U modula nemuze byt 0");
+                    if (varA != 0) result = OperationModul.Instance.Modulo(varA, varB); //Singleton call
+                    else MessageBox.Show("U modula nemuze byt 0"); // information warning
                     break;
 
                 case Operations.sin:
-                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)";
-                    result = OperationModul.Instance.Sin(varA);
+                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)"; // information warning
+                    result = OperationModul.Instance.Sin(varA); //Singleton call
                     break;
 
                 case Operations.cos:
-                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)";
-                    result = OperationModul.Instance.Cos(varA);
+                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)"; // information warning
+                    result = OperationModul.Instance.Cos(varA); //Singleton call
                     break;
 
                 case Operations.tan:
-                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)";
-                    result = OperationModul.Instance.Tan(varA);
+                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)"; // information warning
+                    result = OperationModul.Instance.Tan(varA); //Singleton call
                     break;
 
                 case Operations.cotan:
-                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)";
-                    result = OperationModul.Instance.Cotan(varA);
+                    labelWarning.Text = "zadejte jen leve cislo (predstavujici stupne)"; // information warning
+                    result = OperationModul.Instance.Cotan(varA); //Singleton call
                     break;
 
                 case Operations.squereRoot:
-                    labelWarning.Text = "pro mocninu zadejte pouze leve cislo";
-                    result = OperationModul.Instance.SquereRoot(varA);
+                    labelWarning.Text = "pro mocninu zadejte pouze leve cislo"; // information warning
+                    result = OperationModul.Instance.SquereRoot(varA); //Singleton call
                     break;
 
                 case Operations.cubes:
-                    labelWarning.Text = "pro mocninu zadejte pouze leve cislo";
-                    result = OperationModul.Instance.Cube(varA);
+                    labelWarning.Text = "pro mocninu zadejte pouze leve cislo"; // information warning
+                    result = OperationModul.Instance.Cube(varA); //Singleton call
                     break;
 
                 case Operations.power:
-                    labelWarning.Text = "leve cislo predstavuje x\nprave cislo y";
-                    result = OperationModul.Instance.Power(varA, varB);
+                    labelWarning.Text = "leve cislo predstavuje x\nprave cislo y"; // information warning
+                    result = OperationModul.Instance.Power(varA, varB); //Singleton call
                     break;
 
-                default:
-                    MessageBox.Show("Nenadefinovana operace!");
+                default: 
+                    MessageBox.Show("Nenadefinovana operace!"); // information warning
                     break;
 
             }
 
-            // display of result and calculation
+            // display of result and calculation to textBoxes
             textBoxResult.Text = result.Result.ToString();
             textBoxCalculation.Text = result.ResultString;
 

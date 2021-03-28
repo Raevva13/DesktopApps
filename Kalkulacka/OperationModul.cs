@@ -31,167 +31,165 @@ namespace Kalkulacka
         }
 
         /// <summary>
-        /// Plus method with Result and ResultString
+        /// Plus method with Input "a","b" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Plus(double a, double b)
         {
-            ResultHolder holder = new ResultHolder { Result = a + b };
-            holder.ResultString = $"{a} + {b} = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = a + b }; //result
+            holder.ResultString = $"{a} + {b} = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>resu
-        /// Minus method with Result and ResultString
+        /// Minus method with input "a","b" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Minus(double a, double b)
         {
-            ResultHolder holder = new ResultHolder { Result = a - b };
-            holder.ResultString = $"{a} - {b} = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = a - b }; //result
+            holder.ResultString = $"{a} - {b} = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
 
         /// <summary>
-        /// Multiply method with Result and ResultString
+        /// Multiply method with input "a","b" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Times(double a, double b)
         {
-            ResultHolder holder = new ResultHolder { Result = a * b };
-            holder.ResultString = $"{a} * {b} = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = a * b }; //result
+            holder.ResultString = $"{a} * {b} = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Divided method with Result and ResultString
+        /// Divided method with input "a", "b" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Divided(double a, double b)
         {
-            ResultHolder holder = new ResultHolder { Result = a / b };
-            holder.ResultString = $"{a} ÷ {b} = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = a / b }; //result
+            holder.ResultString = $"{a} ÷ {b} = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Modulo method with Result and ResultString
+        /// Modulo method with input "a","b", and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Modulo(double a, double b)
         {
-            ResultHolder holder = new ResultHolder { Result = a % b };
-            holder.ResultString = $"{a} % {b} = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = a % b }; //result
+            holder.ResultString = $"{a} % {b} = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Sinus method (on degrees) with Result and ResultString
+        /// Sinus method (on degrees) with input "a" (degrees) and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Sin(double a)
         {
-            ResultHolder holder = new ResultHolder { Result = Math.Sin((Math.PI * a) / 180)};
-            holder.ResultString = $"sin{a}° = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = Math.Sin((Math.PI * a) / 180)}; //result
+            holder.ResultString = $"sin{a}° = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Cosinus method (on degrees) with Result and ResultString
+        /// Cosinus method (on degrees) with input "a" (degrees) and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Cos(double a)
         {
-            ResultHolder holder = new ResultHolder {Result = Math.Cos((Math.PI * a) / 180)};
-            holder.ResultString = $"cos{a}° = {holder.Result}";
+            ResultHolder holder = new ResultHolder {Result = Math.Cos((Math.PI * a) / 180)}; //result
+            holder.ResultString = $"cos{a}° = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Tangens method (on degree) with Result and ResultString
+        /// Tangens method (on degree) with input "a" (degrees) and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
-        /// <returns></returns>
-
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Tan(double a)
         {
-            ResultHolder holder = new ResultHolder { Result = Math.Tan((Math.PI * a) / 180) };
-            holder.ResultString = $"tan{a}° = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = Math.Tan((Math.PI * a) / 180) }; //result
+            holder.ResultString = $"tan{a}° = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Cotangens method (on degree) with Result and ResultString
+        /// Cotangens method (on degree) with input "a" (degrees and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Cotan(double a)
         {
-            ResultHolder holder = new ResultHolder { Result = 1 / (Math.Tan((Math.PI * a) / 180)) };
-            holder.ResultString = $"cotan{a}° = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = 1 / (Math.Tan((Math.PI * a) / 180)) }; //result
+            holder.ResultString = $"cotan{a}° = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// SquereRoot method with Result and ResultString
+        /// SquereRoot method with input "a" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder SquereRoot(double a)
         {
-            ResultHolder holder = new ResultHolder { Result = Math.Pow(a, 2) };
-            holder.ResultString = $"{a}^2 = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = Math.Pow(a, 2) }; //result
+            holder.ResultString = $"{a}^2 = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Cubes method with Result and ResultString
+        /// Cubes method with input "a" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
-        /// <returns></returns>
-
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Cube(double a)
         {
-            ResultHolder holder = new ResultHolder { Result = Math.Pow(a, 3) };
-            holder.ResultString = $"{a}^3 = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = Math.Pow(a, 3) }; //result
+            holder.ResultString = $"{a}^3 = {holder.Result}"; //result string with calculation
 
             return holder;
         }
 
         /// <summary>
-        /// Power method with Result and ResultString
+        /// Power method with input "a","b" and output Result and ResultString
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        /// <returns></returns>
+        /// <returns>Result, ResultString</returns>
         public ResultHolder Power(double a, double b)
         {
-            ResultHolder holder = new ResultHolder { Result = Math.Pow(a, b) };
-            holder.ResultString = $"{a}^{b} = {holder.Result}";
+            ResultHolder holder = new ResultHolder { Result = Math.Pow(a, b) }; //result
+            holder.ResultString = $"{a}^{b} = {holder.Result}"; //result string with calculation
 
             return holder;
         }
