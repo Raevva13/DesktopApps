@@ -98,6 +98,7 @@ namespace FinancniProdukty
         }
 
 
+
         static double ShortSavings()
         {
             Console.Write("Počet vkladů během jednoho úrokového období: ");

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialProductsWinforms", "FinancialProductsWinforms.csproj", "{7D096DB1-0239-495F-A828-C95757A3FEBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D096DB1-0239-495F-A828-C95757A3FEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D096DB1-0239-495F-A828-C95757A3FEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D096DB1-0239-495F-A828-C95757A3FEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D096DB1-0239-495F-A828-C95757A3FEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A01D74D8-C288-4025-B8B7-73E4DB75D9DE}
+	EndGlobalSection
+EndGlobal

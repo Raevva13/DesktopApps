@@ -35,6 +35,7 @@ namespace Kalkulacka
         public KalkulackaForm()
         {
             InitializeComponent();
+            //operationComboBox1.DataSource = Enum.GetValues(typeof(Operations));
             operationComboBox1.SelectedIndex = 0; // starting value "+"
         }
 
