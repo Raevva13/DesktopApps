@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace FinancialProductsWinforms.ProductsHolder
 {
-    public class LoanRepayment : Product
+    class LoanRepayment : ProductBase
     {
         public double SavingTime { get; set; }
+        public LoanRepayment(double amountOfInvestment, double interestRate, double savingTime):base(amountOfInvestment,interestRate)
+        {
+            SavingTime = savingTime;
+        }
     }
 }

@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace FinancialProductsWinforms.ProductsHolder
 {
-    class CombinateQuarterly : ProductBase
+    class CombinateQuarterlyWithInflation : ProductBase
     {
         public double SavingTime { get; set; }
         public double NumberOfDeposits { get; set; }
+        public double Inflation { get; set; }
 
-        public CombinateQuarterly (double amountOfInvestment, double interestRate, double savingTime, double numberOfDeposits) : base (amountOfInvestment, interestRate)
+        public CombinateQuarterlyWithInflation (double amountOfInvestment, double interestRate, double savingTime, double numberOfDeposits, double inflation) : base (amountOfInvestment, interestRate)
         {
             SavingTime = savingTime;
             NumberOfDeposits = numberOfDeposits;
+            Inflation = inflation;
         }
     }
 }

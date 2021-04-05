@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace FinancialProductsWinforms.ProductsHolder
 {
-    public class CombinateMonthlyInflation : Product
+    public class LongTerm : ProductBase
     {
         public double SavingTime { get; set; }
-        public double Inflation { get; set; }
-
+        public LongTerm(double amountOfInvestment, double interestRate, double savingTime) : base (amountOfInvestment, interestRate)
+        {
+            SavingTime = savingTime;
+        }
     }
 }

@@ -248,9 +248,15 @@ namespace FinancialProductsWinforms
 
         }
 
+
+
+
+
         private void buttonOneTime_Click(object sender, EventArgs e)
         {
             OutcomeHolder result = new OutcomeHolder();
+            OneTimeInvestment calcul = new OneTimeInvestment(); 
+            calcul.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountOneTime.Value);
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountOneTime.Value);
             result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeOneTime.Value);
@@ -264,7 +270,6 @@ namespace FinancialProductsWinforms
 
         private void buttonShortTerm_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountShorTermSavings.Value);
@@ -279,7 +284,6 @@ namespace FinancialProductsWinforms
 
         private void buttonShortPreTerm_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountShortPreTerm.Value);
@@ -295,7 +299,6 @@ namespace FinancialProductsWinforms
 
         private void buttonLongTerm_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountLongTerm.Value);
@@ -310,7 +313,6 @@ namespace FinancialProductsWinforms
 
         private void buttonCombinateSavingMonthly_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateMonthly.Value);
@@ -325,7 +327,6 @@ namespace FinancialProductsWinforms
 
         private void buttonCombinateSavingMonthlyWithInflation_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateMonthlyInflation.Value);
@@ -341,7 +342,6 @@ namespace FinancialProductsWinforms
 
         private void buttonCombinateSavingsQuarterly_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateQuarterly.Value);
@@ -373,7 +373,6 @@ namespace FinancialProductsWinforms
 
         private void buttonLoanRepayment_Click(object sender, EventArgs e)
         {
-            Variables variables = new Variables();
             OutcomeHolder result = new OutcomeHolder();
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountLoanRepayment.Value);

@@ -4,11 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FinancialProductsWinforms.ProductsHolder
 {
-    public class OneTimeInvestment : Product
+    class OneTimeInvestment : ProductBase
     {
         public double SavingTime { get; set; }
 
+        public OneTimeInvestment(double amountOfInvestment, double interestRate, double savingTime) : base(amountOfInvestment, interestRate)
+        {
+            SavingTime = savingTime;
+
+        }
+
+        
+
+        
+           
+        
     }
 }

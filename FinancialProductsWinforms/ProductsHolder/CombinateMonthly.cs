@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace FinancialProductsWinforms.ProductsHolder
 {
-    public class CombinateMonthl : Product
+    public class CombinateMonthly : ProductBase
     {
         public double SavingTime { get; set; }
+
+        public CombinateMonthly (double amountOfInvestment, double interestRate, double savingTime) : base(amountOfInvestment, interestRate)
+        {
+            SavingTime = savingTime; 
+        }
 
     }
 }

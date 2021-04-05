@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataHolders\OutcomeHolder.cs" />
-    <Compile Include="DataHolders\Variables.cs" />
     <Compile Include="FinancialProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,15 +55,15 @@
     </Compile>
     <Compile Include="ProductionModul.cs" />
     <Compile Include="ProductsHolder\CombinateMonthly.cs" />
-    <Compile Include="ProductsHolder\CombinateMonthlyInflation.cs" />
+    <Compile Include="ProductsHolder\CombinateMonthlyWithInflation.cs" />
     <Compile Include="ProductsHolder\CombinateQuarterly.cs" />
-    <Compile Include="ProductsHolder\CombinateQuarterlyInflation.cs" />
+    <Compile Include="ProductsHolder\CombinateQuarterlyWithInflation.cs" />
     <Compile Include="ProductsHolder\LoanRepayment.cs" />
-    <Compile Include="ProductsHolder\LongTermSavings.cs" />
+    <Compile Include="ProductsHolder\LongTerm.cs" />
     <Compile Include="ProductsHolder\OneTimeInvestment.cs" />
-    <Compile Include="ProductsHolder\Product.cs" />
-    <Compile Include="ProductsHolder\ShortPreTermSavings.cs" />
-    <Compile Include="ProductsHolder\ShortTermSavings.cs" />
+    <Compile Include="ProductsHolder\ProductBase.cs" />
+    <Compile Include="ProductsHolder\ShortPreTerm.cs" />
+    <Compile Include="ProductsHolder\ShortTerm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FinancialProducts.resx">

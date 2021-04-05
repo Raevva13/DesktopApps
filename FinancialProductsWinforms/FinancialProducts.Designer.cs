@@ -216,7 +216,6 @@ namespace FinancialProductsWinforms
             this.buttonResult.Text = "Zjisti hodnotu";
             this.buttonResult.UseVisualStyleBackColor = true;
             this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
-            this.buttonResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.buttonResult_DragDrop);
             // 
             // labelSavingTime
             // 
