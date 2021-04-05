@@ -255,8 +255,6 @@ namespace FinancialProductsWinforms
         private void buttonOneTime_Click(object sender, EventArgs e)
         {
             OutcomeHolder result = new OutcomeHolder();
-            OneTimeInvestment calcul = new OneTimeInvestment(); 
-            calcul.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountOneTime.Value);
 
             result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountOneTime.Value);
             result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeOneTime.Value);
