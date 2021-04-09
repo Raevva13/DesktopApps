@@ -17,355 +17,134 @@ namespace FinancialProductsWinforms
     public partial class FinancialProducts
         : Form
     {
-        private double varAmountOfInvestment;
-        private double varSavingTime;
-        private double varInterestRate;
-        private double varNumberOfDeposits;
-        private double varInflation;
-        private Products selectedProduct;
 
-
-
-        public enum Products
-        {
-            oneTimeInvestment, shortTermSavings, shortPreTermSavings, longTermSavings, combinateSavingsMonthly, combinateSavingsMonthlyWithInflation, combinateSavingsQuarterly, combinateSavingsQuarterlyWithInflation, loanRepayment
-        };
 
         public FinancialProducts()
         {
             InitializeComponent();
-            comboBoxProducts.DataSource = Enum.GetValues(typeof(Products));
-            comboBoxProducts.SelectedIndex = 2;
-            //comboBoxProducts.Items.Add();
-            //comboBoxProducts.SelectedIndex = 0;
-        }
-
-        private void buttonResult_Click(object sender, EventArgs e)
-        {
-
-            labelInformation.Text = string.Empty;
-
-            //variables
-            selectedProduct = (Products)comboBoxProducts.SelectedIndex;
-            varAmountOfInvestment = Convert.ToDouble(numericUpDownAmountOfInvestment.Value);
-            varSavingTime = Convert.ToDouble(numericUpDownSavingTime.Value);
-            varInterestRate = Convert.ToDouble(numericUpDownInterestRate.Value);
-            varNumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDeposits.Value);
-            varInflation = Convert.ToDouble(numericUpDownInflation.Value);
-
-
-            OutcomeHolder result = new OutcomeHolder();
-
-            // choice from products
-            switch (selectedProduct)
-            {
-                case Products.oneTimeInvestment:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-
-                        labelNumberOfDeposits.Visible = false;
-                        numericUpDownNumberOfDeposits.Visible = false;
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = true;
-
-                        result = ProductionModul.Specimen.OneTimeInvestment(varAmountOfInvestment, varSavingTime, varInterestRate);
-                    }
-                    break;
-
-                case Products.shortTermSavings:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši vkladu\nÚrokovou sazbu\nPočet vkladů během p.a.";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-                        labelNumberOfDeposits.Visible = true;
-                        numericUpDownNumberOfDeposits.Visible = true;
-
-                        labelSavingTime.Visible = false;
-                        numericUpDownSavingTime.Visible = false;
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = false;
-
-                        result = ProductionModul.Specimen.ShortTermSavings(varAmountOfInvestment, varInterestRate, varNumberOfDeposits);
-                        break;
-                    }
-
-                case Products.shortPreTermSavings:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši naspořené částky\nÚrokovou sazbu\nPočet vkladů během p.a.";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-                        labelNumberOfDeposits.Visible = true;
-                        numericUpDownNumberOfDeposits.Visible = true;
-
-                        labelSavingTime.Visible = false;
-                        numericUpDownSavingTime.Visible = false;
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = false;
-
-                        result = ProductionModul.Specimen.ShortPreTermSavings(varAmountOfInvestment, varInterestRate, varNumberOfDeposits);
-                    }
-                    break;
-                case Products.longTermSavings:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-
-                        labelNumberOfDeposits.Visible = false;
-                        numericUpDownNumberOfDeposits.Visible = false;
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = false;
-
-                        result = ProductionModul.Specimen.LongTermSavings(varAmountOfInvestment, varSavingTime, varInterestRate);
-
-                    }
-                    break;
-
-                case Products.combinateSavingsMonthly:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-
-                        labelNumberOfDeposits.Visible = false;
-                        numericUpDownNumberOfDeposits.Visible = false;
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = false;
-
-                        result = ProductionModul.Specimen.CombinateSavingsMonthly(varAmountOfInvestment, varSavingTime, varInterestRate);
-
-                    }
-                    break;
-
-                case Products.combinateSavingsMonthlyWithInflation:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu\nVýši inflace";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-                        labelInflation.Visible = true;
-                        numericUpDownInflation.Visible = true;
-
-                        labelNumberOfDeposits.Visible = false;
-                        numericUpDownNumberOfDeposits.Visible = false;
-
-                        result = ProductionModul.Specimen.CombinateSavingsMonthlyWithInflation(varAmountOfInvestment, varSavingTime, varInterestRate, varInflation);
-                    }
-                    break;
-
-
-
-                case Products.combinateSavingsQuarterly:
-                    {
-                        labelInformation.Text = "Zadejte\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu\nPočet vkladů";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-                        labelNumberOfDeposits.Visible = true;
-                        numericUpDownNumberOfDeposits.Visible = true;
-
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = false;
-
-                        result = ProductionModul.Specimen.CombinateSavingsQuarterly(varAmountOfInvestment, varSavingTime, varInterestRate, varNumberOfDeposits);
-                    }
-                    break;
-
-
-                case Products.combinateSavingsQuarterlyWithInflation:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu\nPočet vkladů během p.a.\nVýši inflace";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownInterestRate.Visible = true;
-                        labelNumberOfDeposits.Visible = true;
-                        numericUpDownNumberOfDeposits.Visible = true;
-                        labelInflation.Visible = true;
-                        numericUpDownInflation.Visible = true;
-
-
-                        result = ProductionModul.Specimen.CombinateSavingsQuarterlyWithInflation(varAmountOfInvestment, varSavingTime, varInterestRate, varNumberOfDeposits, varInflation);
-                    }
-                    break;
-
-                case Products.loanRepayment:
-                    {
-                        labelInformation.Text = "Zadejte:\nVýši úvěru\nDobu spoření v letech\nÚrokovou sazbu";
-                        labelAmountOfInvestment.Visible = true;
-                        numericUpDownAmountOfInvestment.Visible = true;
-                        labelSavingTime.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-                        labelInterestRate.Visible = true;
-                        numericUpDownSavingTime.Visible = true;
-
-                        labelNumberOfDeposits.Visible = false;
-                        numericUpDownNumberOfDeposits.Visible = false;
-                        labelInflation.Visible = false;
-                        numericUpDownInflation.Visible = false;
-
-                        result = ProductionModul.Specimen.LoanRepayment(varAmountOfInvestment, varSavingTime, varInterestRate);
-                    }
-                    break;
-
-                default:
-                    MessageBox.Show("Tato možnost neexistuje");
-                    break;
-            }
-
-            textBoxResult.Text = result.Outcome.ToString();
-            labelOutcomeString.Text = result.OutcomeString;
-        }
-
-        private void buttonResult_DragDrop(object sender, DragEventArgs e)
-        {
 
         }
 
-
-
-
-
+       
         private void buttonOneTime_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            OneTimeInvestment investment = 
+                new OneTimeInvestment(
+                    Convert.ToInt32(numericUpDownAmountOneTime.Value),
+                    Convert.ToDouble(numericUpDownInterestRateOneTime.Value),
+                    Convert.ToInt32(numericUpDownSavingTimeOneTime.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountOneTime.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeOneTime.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateOneTime.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.OneTimeInvestment(result.AmountOfInvestment, result.SavingTime, result.InterestRate);
-            textBoxOneTime.Text = result.Outcome.ToString();
-            labelDataOneTime.Text = result.OutcomeString;
+            textBoxOneTime.Text = investment.Outcome.ToString();
+            labelDataOneTime.Text = investment.OutcomeString;
 
         }
 
         private void buttonShortTerm_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            ShortTerm investment =
+                new ShortTerm(
+                   Convert.ToInt32(numericUpDownAmountShorTermSavings.Value),
+                   Convert.ToDouble(numericUpDownInterestRateShortTermSavings.Value),
+                   Convert.ToInt32(numericUpDownNumberOfDepositsShortTermSavings.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountShorTermSavings.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateShortTermSavings.Value);
-            result.NumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDepositsShortTermSavings.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.ShortTermSavings(result.AmountOfInvestment, result.InterestRate, result.NumberOfDeposits);
-            textBoxShortTerm.Text = result.Outcome.ToString();
-            labelDataShortTerm.Text = result.OutcomeString;
-
+            textBoxShortTerm.Text = investment.Outcome.ToString();
+            labelDataShortTerm.Text = investment.OutcomeString;
         }
 
         private void buttonShortPreTerm_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            ShortPreTerm investment =
+                new ShortPreTerm(
+                    Convert.ToInt32(numericUpDownAmountShortPreTerm.Value),
+                    Convert.ToDouble(numericUpDownInterestRateShortPreTerm.Value),
+                    Convert.ToInt32(numericUpDownNumberOfDepositsShortPreTerm.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountShortPreTerm.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateShortPreTerm.Value);
-            result.NumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDepositsShortPreTerm.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.ShortPreTermSavings(result.AmountOfInvestment, result.InterestRate, result.NumberOfDeposits);
-            textBoxShortPreTerm.Text = result.Outcome.ToString();
-            labelDataPreTerm.Text = result.OutcomeString;
-
-
+            textBoxShortPreTerm.Text = investment.Outcome.ToString();
+            labelDataPreTerm.Text = investment.OutcomeString;
         }
 
         private void buttonLongTerm_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            LongTerm investment =
+                new LongTerm(
+                    Convert.ToInt32(numericUpDownAmountLongTerm.Value),
+                    Convert.ToDouble(numericUpDownInterestRateLongTerm.Value),
+                    Convert.ToInt32(numericUpDownSavingTimeLongTerm.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountLongTerm.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeLongTerm.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateLongTerm.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.LongTermSavings(result.AmountOfInvestment, result.SavingTime, result.InterestRate);
-            textBoxLongTerm.Text = result.Outcome.ToString();
-            labelDataLongTerm.Text = result.OutcomeString;
-
+            textBoxLongTerm.Text = investment.Outcome.ToString();
+            labelDataLongTerm.Text = investment.OutcomeString;
         }
 
         private void buttonCombinateSavingMonthly_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            CombinateMonthly investment =
+                new CombinateMonthly(
+                    Convert.ToInt32(numericUpDownAmountCombinateMonthly.Value),
+                    Convert.ToDouble(numericUpDownInterestRateCombinateMonthly.Value),
+                    Convert.ToInt32(numericUpDownSavingTimeCombinateMonthly.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateMonthly.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeCombinateMonthly.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateCombinateMonthly.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.CombinateSavingsMonthly(result.InterestRate, result.SavingTime, result.InterestRate);
-            textBoxCombinateSavingMonthly.Text = result.Outcome.ToString();
-            labelDataCombinateMonthly.Text = result.OutcomeString;
-
+            textBoxCombinateSavingMonthly.Text = investment.Outcome.ToString();
+            labelDataCombinateMonthly.Text = investment.OutcomeString;
         }
 
         private void buttonCombinateSavingMonthlyWithInflation_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            CombinateMonthlyWithInflation investment
+                = new CombinateMonthlyWithInflation(
+                    Convert.ToInt32(numericUpDownAmountCombinateMonthlyInflation.Value),
+                    Convert.ToDouble(numericUpDownInterestRateCombinateMonthlyInflation.Value),
+                    Convert.ToInt32(numericUpDownSavingTimeCombinateMonthInflation.Value),
+                    Convert.ToDouble(numericUpDownInflationCombinateMonthlyInflation.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateMonthlyInflation.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeCombinateMonthInflation.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateCombinateMonthlyInflation.Value);
-            result.Inflation = Convert.ToDouble(numericUpDownInflationCombinateMonthlyInflation.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.CombinateSavingsMonthlyWithInflation(result.AmountOfInvestment, result.SavingTime, result.InterestRate, result.Inflation);
-            textBoxCombinateSavingsmonthlyWithInflation.Text = result.Outcome.ToString();
-            labelDataCombinateMonthlyInflation.Text = result.OutcomeString;
-
+            textBoxCombinateSavingsmonthlyWithInflation.Text = investment.Outcome.ToString();
+            labelDataCombinateMonthlyInflation.Text = investment.OutcomeString;
         }
 
         private void buttonCombinateSavingsQuarterly_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            CombinateQuarterly investment
+                = new CombinateQuarterly(
+                    Convert.ToInt32(numericUpDownAmountCombinateQuarterly.Value),
+                    Convert.ToDouble(numericUpDownInterestRateCombinateQuarterly.Value),
+                    Convert.ToInt32(numericUpDownSavingTimeCombinateQuarterly.Value),
+                    Convert.ToInt32(numericUpDownNumberOfDepositsCombinateQuarterly.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateQuarterly.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeCombinateQuarterly.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateCombinateQuarterly.Value);
-            result.NumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDepositsCombinateQuarterly.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.CombinateSavingsQuarterly(result.AmountOfInvestment, result.SavingTime, result.InterestRate, result.NumberOfDeposits);
-            textBoxCombinateSavingsQuarterly.Text = result.Outcome.ToString();
-            labelDataCombinateQuarterly.Text = result.OutcomeString;
-
+            textBoxCombinateSavingsQuarterly.Text = investment.Outcome.ToString();
+            labelDataCombinateQuarterly.Text = investment.OutcomeString;
         }
 
         private void buttonCombinateQuarterlyWithInflation_Click(object sender, EventArgs e)
         {
-            OutcomeHolder result = new OutcomeHolder();
+            CombinateQuarterlyWithInflation investment
+                = new CombinateQuarterlyWithInflation(
+                    Convert.ToInt32(numericUpDownAmountCombinateQuarterlyInflation.Value),
+                    Convert.ToDouble(numericUpDownInterestRateCombinateQuarterlyInflation.Value),
+                    Convert.ToInt32(numericUpDownSavingTimeCombinateQuarterlyInflation.Value),
+                    Convert.ToInt32(numericUpDownNumberOfDepositsCombinateQuarterlyInflation.Value),
+                    Convert.ToDouble(numericUpDownAmountCombinateQuarterlyInflation.Value));
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateQuarterlyInflation.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeCombinateQuarterlyInflation.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateCombinateQuarterlyInflation.Value);
-            result.NumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDepositsCombinateQuarterlyInflation.Value);
-            result.Inflation = Convert.ToDouble(numericUpDownInflationCombinateQuarterlyInflation.Value);
+            investment.Compute();
 
-            result = ProductionModul.Specimen.CombinateSavingsQuarterlyWithInflation(result.AmountOfInvestment, result.SavingTime, result.InterestRate, result.NumberOfDeposits, result.Inflation);
-            textBoxCombinateQuarterlyWithInflation.Text = result.Outcome.ToString();
-            labelDataQuarterlyInflation.Text = result.OutcomeString;
+            textBoxCombinateQuarterlyWithInflation.Text = investment.Outcome.ToString();
+            labelDataQuarterlyInflation.Text = investment.OutcomeString;
+
+
+
+ 
 
         }
 
@@ -377,13 +156,251 @@ namespace FinancialProductsWinforms
             result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeLoanRepayment.Value);
             result.InterestRate = Convert.ToDouble(numericUpDownInterestRateLoanRepayment.Value);
 
-            result = ProductionModul.Specimen.LoanRepayment(result.AmountOfInvestment, result.SavingTime, result.InterestRate);
+            //result = ProductionModul.Specimen.LoanRepayment(result.AmountOfInvestment, result.SavingTime, result.InterestRate);
             textBoxLoanRepayment.Text = result.Outcome.ToString();
             labelData.Text = result.OutcomeString;
         }
 
 
-        //LoanRepayment funkcio = new LoanRepayment();
+
+
+
+        //_________________________________________________
+
+        //public enum Products
+        //{
+        //    oneTimeInvestment, shortTermSavings, shortPreTermSavings, longTermSavings, combinateSavingsMonthly, combinateSavingsMonthlyWithInflation, combinateSavingsQuarterly, combinateSavingsQuarterlyWithInflation, loanRepayment
+        //};
+
+
+        //private double varAmountOfInvestment;
+        //private double varSavingTime;
+        //private double varInterestRate;
+        //private double varNumberOfDeposits;
+        //private double varInflation;
+        //private Products selectedProduct;
+
+
+        //comboBoxProducts.DataSource = Enum.GetValues(typeof(Products));
+        //comboBoxProducts.SelectedIndex = 2;
+        //comboBoxProducts.Items.Add();
+        //comboBoxProducts.SelectedIndex = 0;
+
+        //private void buttonResult_Click(object sender, EventArgs e)
+        //{
+
+        //    labelInformation.Text = string.Empty;
+
+        //variables
+        //selectedProduct = (Products)comboBoxProducts.SelectedIndex;
+        //varAmountOfInvestment = Convert.ToDouble(numericUpDownAmountOfInvestment.Value);
+        //varSavingTime = Convert.ToDouble(numericUpDownSavingTime.Value);
+        //varInterestRate = Convert.ToDouble(numericUpDownInterestRate.Value);
+        //varNumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDeposits.Value);
+        //varInflation = Convert.ToDouble(numericUpDownInflation.Value);
+
+
+        //OutcomeHolder result = new OutcomeHolder();
+
+        // choice from products
+        //switch (selectedProduct)
+        //{
+        //    case Products.oneTimeInvestment:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelSavingTime.Visible = true;
+        //            //numericUpDownSavingTime.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownInterestRate.Visible = true;
+
+        //            //labelNumberOfDeposits.Visible = false;
+        //            //numericUpDownNumberOfDeposits.Visible = false;
+        //            //labelInflation.Visible = false;
+        //            //numericUpDownInflation.Visible = true;
+
+        //            //result = ProductionModul.Specimen.OneTimeInvestment(varAmountOfInvestment, varSavingTime, varInterestRate);
+        //        }
+        //        break;
+
+        //    case Products.shortTermSavings:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši vkladu\nÚrokovou sazbu\nPočet vkladů během p.a.";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownInterestRate.Visible = true;
+        //            //labelNumberOfDeposits.Visible = true;
+        //            //numericUpDownNumberOfDeposits.Visible = true;
+
+        //            //labelSavingTime.Visible = false;
+        //            //numericUpDownSavingTime.Visible = false;
+        //            //labelInflation.Visible = false;
+        //            //numericUpDownInflation.Visible = false;
+
+        //            //result = ProductionModul.Specimen.ShortTermSavings(varAmountOfInvestment, varInterestRate, varNumberOfDeposits);
+        //            break;
+        //        }
+
+        //    case Products.shortPreTermSavings:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši naspořené částky\nÚrokovou sazbu\nPočet vkladů během p.a.";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownInterestRate.Visible = true;
+        //            //labelNumberOfDeposits.Visible = true;
+        //            //numericUpDownNumberOfDeposits.Visible = true;
+
+        //            //labelSavingTime.Visible = false;
+        //            //numericUpDownSavingTime.Visible = false;
+        //            //labelInflation.Visible = false;
+        //            //numericUpDownInflation.Visible = false;
+
+        //            //result = ProductionModul.Specimen.ShortPreTermSavings(varAmountOfInvestment, varInterestRate, varNumberOfDeposits);
+        //        }
+        //        break;
+        //    case Products.longTermSavings:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelSavingTime.Visible = true;
+        //            //numericUpDownSavingTime.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownInterestRate.Visible = true;
+
+        //            //labelNumberOfDeposits.Visible = false;
+        //            //numericUpDownNumberOfDeposits.Visible = false;
+        //            //labelInflation.Visible = false;
+        //            //numericUpDownInflation.Visible = false;
+
+        //            //result = ProductionModul.Specimen.LongTermSavings(varAmountOfInvestment, varSavingTime, varInterestRate);
+
+        //        }
+        //        break;
+
+        //    case Products.combinateSavingsMonthly:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelSavingTime.Visible = true;
+        //            //numericUpDownSavingTime.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownInterestRate.Visible = true;
+
+        //            //labelNumberOfDeposits.Visible = false;
+        //            //numericUpDownNumberOfDeposits.Visible = false;
+        //            //labelInflation.Visible = false;
+        //            //numericUpDownInflation.Visible = false;
+
+        //            //result = ProductionModul.Specimen.CombinateSavingsMonthly(varAmountOfInvestment, varSavingTime, varInterestRate);
+
+        //        }
+        //        break;
+
+        //    case Products.combinateSavingsMonthlyWithInflation:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu\nVýši inflace";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelSavingTime.Visible = true;
+        //            //numericUpDownSavingTime.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownInterestRate.Visible = true;
+        //            //labelInflation.Visible = true;
+        //            //numericUpDownInflation.Visible = true;
+
+        //            //labelNumberOfDeposits.Visible = false;
+        //            //numericUpDownNumberOfDeposits.Visible = false;
+
+        //            //result = ProductionModul.Specimen.CombinateSavingsMonthlyWithInflation(varAmountOfInvestment, varSavingTime, varInterestRate, varInflation);
+        //        }
+        //        break;
+
+
+
+        //    case Products.combinateSavingsQuarterly:
+        //        {
+        //            //labelInformation.Text = "Zadejte\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu\nPočet vkladů";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelSavingTime.Visible = true;
+        ////            //numericUpDownSavingTime.Visible = true;
+        ////            //labelInterestRate.Visible = true;
+        ////            //numericUpDownInterestRate.Visible = true;
+        ////            //labelNumberOfDeposits.Visible = true;
+        ////            //numericUpDownNumberOfDeposits.Visible = true;
+
+        ////            //labelInflation.Visible = false;
+        ////            //numericUpDownInflation.Visible = false;
+
+        ////            //result = ProductionModul.Specimen.CombinateSavingsQuarterly(varAmountOfInvestment, varSavingTime, varInterestRate, varNumberOfDeposits);
+        ////        }
+        ////        break;
+
+
+        ////    case Products.combinateSavingsQuarterlyWithInflation:
+        ////        {
+        ////            //labelInformation.Text = "Zadejte:\nVýši vkladu\nDobu spoření v letech\nÚrokovou sazbu\nPočet vkladů během p.a.\nVýši inflace";
+        ////            //labelAmountOfInvestment.Visible = true;
+        ////            //numericUpDownAmountOfInvestment.Visible = true;
+        ////            //labelSavingTime.Visible = true;
+        ////            //numericUpDownSavingTime.Visible = true;
+        ////            //labelInterestRate.Visible = true;
+        ////            //numericUpDownInterestRate.Visible = true;
+        ////            //labelNumberOfDeposits.Visible = true;
+        ////            //numericUpDownNumberOfDeposits.Visible = true;
+        ////            //labelInflation.Visible = true;
+        ////            //numericUpDownInflation.Visible = true;
+
+
+        ////            //result = ProductionModul.Specimen.CombinateSavingsQuarterlyWithInflation(varAmountOfInvestment, varSavingTime, varInterestRate, varNumberOfDeposits, varInflation);
+        ////        }
+        ////        break;
+
+        //    case Products.loanRepayment:
+        //        {
+        //            //labelInformation.Text = "Zadejte:\nVýši úvěru\nDobu spoření v letech\nÚrokovou sazbu";
+        //            //labelAmountOfInvestment.Visible = true;
+        //            //numericUpDownAmountOfInvestment.Visible = true;
+        //            //labelSavingTime.Visible = true;
+        //            //numericUpDownSavingTime.Visible = true;
+        //            //labelInterestRate.Visible = true;
+        //            //numericUpDownSavingTime.Visible = true;
+
+        //            //labelNumberOfDeposits.Visible = false;
+        //            //numericUpDownNumberOfDeposits.Visible = false;
+        //            //labelInflation.Visible = false;
+        //            //numericUpDownInflation.Visible = false;
+
+        //            //result = ProductionModul.Specimen.LoanRepayment(varAmountOfInvestment, varSavingTime, varInterestRate);
+        //        }
+        //        break;
+
+        //    default:
+        //        MessageBox.Show("Tato možnost neexistuje");
+        //        break;
+        //}
+
+        ////textBoxResult.Text = result.Outcome.ToString();
+        ////labelOutcomeString.Text = result.OutcomeString;
+
+
+        ////OutcomeHolder result = new OutcomeHolder();
+
+        ////result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountCombinateQuarterlyInflation.Value);
+        ////result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeCombinateQuarterlyInflation.Value);
+        ////result.InterestRate = Convert.ToDouble(numericUpDownInterestRateCombinateQuarterlyInflation.Value);
+        ////result.NumberOfDeposits = Convert.ToDouble(numericUpDownNumberOfDepositsCombinateQuarterlyInflation.Value);
+        ////result.Inflation = Convert.ToDouble(numericUpDownInflationCombinateQuarterlyInflation.Value);
+
+        ////result = ProductionModul.Specimen.CombinateSavingsQuarterlyWithInflation(result.AmountOfInvestment, result.SavingTime, result.InterestRate, result.NumberOfDeposits, result.Inflation);
+        ////textBoxCombinateQuarterlyWithInflation.Text = result.Outcome.ToString();
+        ////labelDataQuarterlyInflation.Text = result.OutcomeString;
+        //}
 
 
 

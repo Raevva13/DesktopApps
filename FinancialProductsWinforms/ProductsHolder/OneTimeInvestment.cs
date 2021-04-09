@@ -7,20 +7,30 @@ using System.Threading.Tasks;
 
 namespace FinancialProductsWinforms.ProductsHolder
 {
-    class OneTimeInvestment : ProductBase
+    public class OneTimeInvestment : ProductBase
     {
-        public double SavingTime { get; set; }
+        public int SavingTime { get; set; }
 
-        public OneTimeInvestment(double amountOfInvestment, double interestRate, double savingTime) : base(amountOfInvestment, interestRate)
+        public OneTimeInvestment(int amountOfInvestment, double interestRate, int savingTime) : base(amountOfInvestment, interestRate)
         {
             SavingTime = savingTime;
 
         }
 
-        
 
-        
-           
-        
+        ///<summary>
+        ///One Time investment with input "amountOfInvestment", "savingTime", "interestRate" and output Outcome, OutcomeString
+        /// <param name="amountOfInvestment"></param>
+        /// <param name="savingTime"></param>
+        /// <param name="interestRate"></param>
+        /// <returns>Outcome, OutcomeString</returns>
+        /// </summary>
+        public override void Compute()
+        {
+            Outcome = Math.Round(AmountOfInvestment * Math.Pow((1 + ((InterestRate * 0.01 / 12))), (SavingTime * 12)));
+
+            OutcomeString = $"Při jednorazove investici bude hodnota investice:\n{Outcome} CZK\nvýše investice: {AmountOfInvestment} CZK\nurokova mira: {InterestRate}%\ndobe sporeni: {SavingTime} let";
+
+        }
     }
 }

@@ -8,13 +8,21 @@ namespace FinancialProductsWinforms.ProductsHolder
 {
     public abstract class ProductBase
     {
-        public double AmountOfInvestment { get; set; }
+        public int AmountOfInvestment { get; set; }
         public double InterestRate { get; set; }
 
-        protected ProductBase(double amountOfInvestment, double interestRate)
+        public double Outcome { get; set; }
+
+        public string OutcomeString { get; set; }
+            
+           
+
+        protected ProductBase(int amountOfInvestment, double interestRate)
         {
             AmountOfInvestment = amountOfInvestment;
             InterestRate = interestRate;
         }
+
+        public abstract void Compute();
     }
 }

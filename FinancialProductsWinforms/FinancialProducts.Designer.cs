@@ -29,24 +29,12 @@ namespace FinancialProductsWinforms
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxProducts = new System.Windows.Forms.ComboBox();
-            this.buttonResult = new System.Windows.Forms.Button();
-            this.labelSavingTime = new System.Windows.Forms.Label();
-            this.numericUpDownSavingTime = new System.Windows.Forms.NumericUpDown();
-            this.labelInterestRate = new System.Windows.Forms.Label();
-            this.labelAmountOfInvestment = new System.Windows.Forms.Label();
-            this.numericUpDownInterestRate = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownAmountOfInvestment = new System.Windows.Forms.NumericUpDown();
-            this.textBoxResult = new System.Windows.Forms.TextBox();
             this.labelWarning = new System.Windows.Forms.Label();
-            this.numericUpDownNumberOfDeposits = new System.Windows.Forms.NumericUpDown();
-            this.labelNumberOfDeposits = new System.Windows.Forms.Label();
-            this.labelOutcomeString = new System.Windows.Forms.Label();
             this.labelInformation = new System.Windows.Forms.Label();
-            this.numericUpDownInflation = new System.Windows.Forms.NumericUpDown();
-            this.labelInflation = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.OneTimeInvest = new System.Windows.Forms.TabPage();
+            this.labelDataOneTime = new System.Windows.Forms.Label();
+            this.labelResultCalcul = new System.Windows.Forms.Label();
             this.textBoxOneTime = new System.Windows.Forms.TextBox();
             this.buttonOneTime = new System.Windows.Forms.Button();
             this.numericUpDownInterestRateOneTime = new System.Windows.Forms.NumericUpDown();
@@ -56,6 +44,7 @@ namespace FinancialProductsWinforms
             this.numericUpDownSavingTimeOneTime = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.ShortTermInvest = new System.Windows.Forms.TabPage();
+            this.labelDataShortTerm = new System.Windows.Forms.Label();
             this.textBoxShortTerm = new System.Windows.Forms.TextBox();
             this.buttonShortTerm = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,6 +54,7 @@ namespace FinancialProductsWinforms
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ShortPreTerm = new System.Windows.Forms.TabPage();
+            this.labelDataPreTerm = new System.Windows.Forms.Label();
             this.labelResultString = new System.Windows.Forms.Label();
             this.textBoxShortPreTerm = new System.Windows.Forms.TextBox();
             this.buttonShortPreTerm = new System.Windows.Forms.Button();
@@ -75,6 +65,7 @@ namespace FinancialProductsWinforms
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.LongTerm = new System.Windows.Forms.TabPage();
+            this.labelDataLongTerm = new System.Windows.Forms.Label();
             this.textBoxLongTerm = new System.Windows.Forms.TextBox();
             this.buttonLongTerm = new System.Windows.Forms.Button();
             this.numericUpDownInterestRateLongTerm = new System.Windows.Forms.NumericUpDown();
@@ -85,6 +76,7 @@ namespace FinancialProductsWinforms
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.CombinateSavingsMonthly = new System.Windows.Forms.TabPage();
+            this.labelDataCombinateMonthly = new System.Windows.Forms.Label();
             this.textBoxCombinateSavingMonthly = new System.Windows.Forms.TextBox();
             this.buttonCombinateSavingMonthly = new System.Windows.Forms.Button();
             this.numericUpDownInterestRateCombinateMonthly = new System.Windows.Forms.NumericUpDown();
@@ -95,6 +87,7 @@ namespace FinancialProductsWinforms
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownSavingTimeCombinateMonthly = new System.Windows.Forms.NumericUpDown();
             this.CombinateMonthWithInflation = new System.Windows.Forms.TabPage();
+            this.labelDataCombinateMonthlyInflation = new System.Windows.Forms.Label();
             this.textBoxCombinateSavingsmonthlyWithInflation = new System.Windows.Forms.TextBox();
             this.buttonCombinateSavingMonthlyWithInflation = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -107,6 +100,7 @@ namespace FinancialProductsWinforms
             this.label21 = new System.Windows.Forms.Label();
             this.numericUpDownSavingTimeCombinateMonthInflation = new System.Windows.Forms.NumericUpDown();
             this.CombinateQuarterly = new System.Windows.Forms.TabPage();
+            this.labelDataCombinateQuarterly = new System.Windows.Forms.Label();
             this.textBoxCombinateSavingsQuarterly = new System.Windows.Forms.TextBox();
             this.buttonCombinateSavingsQuarterly = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -119,6 +113,7 @@ namespace FinancialProductsWinforms
             this.numericUpDownSavingTimeCombinateQuarterly = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
             this.CombinateQuarterlyWithInflation = new System.Windows.Forms.TabPage();
+            this.labelDataQuarterlyInflation = new System.Windows.Forms.Label();
             this.textBoxCombinateQuarterlyWithInflation = new System.Windows.Forms.TextBox();
             this.buttonCombinateQuarterlyWithInflation = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
@@ -141,20 +136,6 @@ namespace FinancialProductsWinforms
             this.numericUpDownAmountLoanRepayment = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownSavingTimeLoanRepayment = new System.Windows.Forms.NumericUpDown();
             this.label35 = new System.Windows.Forms.Label();
-            this.labelResultCalcul = new System.Windows.Forms.Label();
-            this.labelDataOneTime = new System.Windows.Forms.Label();
-            this.labelDataShortTerm = new System.Windows.Forms.Label();
-            this.labelDataPreTerm = new System.Windows.Forms.Label();
-            this.labelDataLongTerm = new System.Windows.Forms.Label();
-            this.labelDataCombinateMonthly = new System.Windows.Forms.Label();
-            this.labelDataCombinateMonthlyInflation = new System.Windows.Forms.Label();
-            this.labelDataCombinateQuarterly = new System.Windows.Forms.Label();
-            this.labelDataQuarterlyInflation = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSavingTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterestRate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmountOfInvestment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfDeposits)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInflation)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.OneTimeInvest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterestRateOneTime)).BeginInit();
@@ -198,85 +179,6 @@ namespace FinancialProductsWinforms
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSavingTimeLoanRepayment)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBoxProducts
-            // 
-            this.comboBoxProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxProducts.FormattingEnabled = true;
-            this.comboBoxProducts.Location = new System.Drawing.Point(25, 94);
-            this.comboBoxProducts.Name = "comboBoxProducts";
-            this.comboBoxProducts.Size = new System.Drawing.Size(247, 21);
-            this.comboBoxProducts.TabIndex = 7;
-            // 
-            // buttonResult
-            // 
-            this.buttonResult.Location = new System.Drawing.Point(25, 121);
-            this.buttonResult.Name = "buttonResult";
-            this.buttonResult.Size = new System.Drawing.Size(121, 22);
-            this.buttonResult.TabIndex = 8;
-            this.buttonResult.Text = "Zjisti hodnotu";
-            this.buttonResult.UseVisualStyleBackColor = true;
-            this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
-            // 
-            // labelSavingTime
-            // 
-            this.labelSavingTime.AutoSize = true;
-            this.labelSavingTime.Location = new System.Drawing.Point(152, 10);
-            this.labelSavingTime.Name = "labelSavingTime";
-            this.labelSavingTime.Size = new System.Drawing.Size(114, 13);
-            this.labelSavingTime.TabIndex = 1;
-            this.labelSavingTime.Text = "Doba sporeni v letech:";
-            // 
-            // numericUpDownSavingTime
-            // 
-            this.numericUpDownSavingTime.Location = new System.Drawing.Point(152, 26);
-            this.numericUpDownSavingTime.Name = "numericUpDownSavingTime";
-            this.numericUpDownSavingTime.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownSavingTime.TabIndex = 4;
-            // 
-            // labelInterestRate
-            // 
-            this.labelInterestRate.AutoSize = true;
-            this.labelInterestRate.Location = new System.Drawing.Point(26, 52);
-            this.labelInterestRate.Name = "labelInterestRate";
-            this.labelInterestRate.Size = new System.Drawing.Size(73, 13);
-            this.labelInterestRate.TabIndex = 2;
-            this.labelInterestRate.Text = "Urokova mira:";
-            // 
-            // labelAmountOfInvestment
-            // 
-            this.labelAmountOfInvestment.AutoSize = true;
-            this.labelAmountOfInvestment.Location = new System.Drawing.Point(26, 10);
-            this.labelAmountOfInvestment.Name = "labelAmountOfInvestment";
-            this.labelAmountOfInvestment.Size = new System.Drawing.Size(103, 13);
-            this.labelAmountOfInvestment.TabIndex = 0;
-            this.labelAmountOfInvestment.Text = "Vyse vkladu/ uveru:";
-            // 
-            // numericUpDownInterestRate
-            // 
-            this.numericUpDownInterestRate.Location = new System.Drawing.Point(26, 68);
-            this.numericUpDownInterestRate.Name = "numericUpDownInterestRate";
-            this.numericUpDownInterestRate.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownInterestRate.TabIndex = 5;
-            // 
-            // numericUpDownAmountOfInvestment
-            // 
-            this.numericUpDownAmountOfInvestment.Location = new System.Drawing.Point(26, 26);
-            this.numericUpDownAmountOfInvestment.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.numericUpDownAmountOfInvestment.Name = "numericUpDownAmountOfInvestment";
-            this.numericUpDownAmountOfInvestment.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownAmountOfInvestment.TabIndex = 3;
-            // 
-            // textBoxResult
-            // 
-            this.textBoxResult.Location = new System.Drawing.Point(152, 123);
-            this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(120, 20);
-            this.textBoxResult.TabIndex = 6;
-            // 
             // labelWarning
             // 
             this.labelWarning.AutoSize = true;
@@ -285,33 +187,6 @@ namespace FinancialProductsWinforms
             this.labelWarning.Size = new System.Drawing.Size(0, 13);
             this.labelWarning.TabIndex = 9;
             // 
-            // numericUpDownNumberOfDeposits
-            // 
-            this.numericUpDownNumberOfDeposits.Location = new System.Drawing.Point(152, 68);
-            this.numericUpDownNumberOfDeposits.Name = "numericUpDownNumberOfDeposits";
-            this.numericUpDownNumberOfDeposits.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownNumberOfDeposits.TabIndex = 10;
-            this.numericUpDownNumberOfDeposits.Visible = false;
-            // 
-            // labelNumberOfDeposits
-            // 
-            this.labelNumberOfDeposits.AutoSize = true;
-            this.labelNumberOfDeposits.Location = new System.Drawing.Point(149, 52);
-            this.labelNumberOfDeposits.Name = "labelNumberOfDeposits";
-            this.labelNumberOfDeposits.Size = new System.Drawing.Size(129, 13);
-            this.labelNumberOfDeposits.TabIndex = 11;
-            this.labelNumberOfDeposits.Text = "Pocet vkladu behem p.a.:";
-            this.labelNumberOfDeposits.Visible = false;
-            // 
-            // labelOutcomeString
-            // 
-            this.labelOutcomeString.AutoSize = true;
-            this.labelOutcomeString.Location = new System.Drawing.Point(26, 150);
-            this.labelOutcomeString.Name = "labelOutcomeString";
-            this.labelOutcomeString.Size = new System.Drawing.Size(35, 13);
-            this.labelOutcomeString.TabIndex = 12;
-            this.labelOutcomeString.Text = "Vypis:";
-            // 
             // labelInformation
             // 
             this.labelInformation.AutoSize = true;
@@ -319,24 +194,6 @@ namespace FinancialProductsWinforms
             this.labelInformation.Name = "labelInformation";
             this.labelInformation.Size = new System.Drawing.Size(0, 13);
             this.labelInformation.TabIndex = 13;
-            // 
-            // numericUpDownInflation
-            // 
-            this.numericUpDownInflation.Location = new System.Drawing.Point(278, 123);
-            this.numericUpDownInflation.Name = "numericUpDownInflation";
-            this.numericUpDownInflation.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownInflation.TabIndex = 14;
-            this.numericUpDownInflation.Visible = false;
-            // 
-            // labelInflation
-            // 
-            this.labelInflation.AutoSize = true;
-            this.labelInflation.Location = new System.Drawing.Point(279, 103);
-            this.labelInflation.Name = "labelInflation";
-            this.labelInflation.Size = new System.Drawing.Size(67, 13);
-            this.labelInflation.TabIndex = 15;
-            this.labelInflation.Text = "Výše inflace:";
-            this.labelInflation.Visible = false;
             // 
             // tabControl1
             // 
@@ -349,7 +206,7 @@ namespace FinancialProductsWinforms
             this.tabControl1.Controls.Add(this.CombinateQuarterly);
             this.tabControl1.Controls.Add(this.CombinateQuarterlyWithInflation);
             this.tabControl1.Controls.Add(this.LoanRepayment);
-            this.tabControl1.Location = new System.Drawing.Point(26, 195);
+            this.tabControl1.Location = new System.Drawing.Point(27, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(372, 317);
@@ -374,6 +231,23 @@ namespace FinancialProductsWinforms
             this.OneTimeInvest.TabIndex = 0;
             this.OneTimeInvest.Text = "OneTimeInvest";
             this.OneTimeInvest.UseVisualStyleBackColor = true;
+            // 
+            // labelDataOneTime
+            // 
+            this.labelDataOneTime.AutoSize = true;
+            this.labelDataOneTime.Location = new System.Drawing.Point(129, 22);
+            this.labelDataOneTime.Name = "labelDataOneTime";
+            this.labelDataOneTime.Size = new System.Drawing.Size(10, 13);
+            this.labelDataOneTime.TabIndex = 24;
+            this.labelDataOneTime.Text = ":";
+            // 
+            // labelResultCalcul
+            // 
+            this.labelResultCalcul.AutoSize = true;
+            this.labelResultCalcul.Location = new System.Drawing.Point(129, 24);
+            this.labelResultCalcul.Name = "labelResultCalcul";
+            this.labelResultCalcul.Size = new System.Drawing.Size(0, 13);
+            this.labelResultCalcul.TabIndex = 23;
             // 
             // textBoxOneTime
             // 
@@ -464,6 +338,15 @@ namespace FinancialProductsWinforms
             this.ShortTermInvest.Text = "ShortTermSavings";
             this.ShortTermInvest.UseVisualStyleBackColor = true;
             // 
+            // labelDataShortTerm
+            // 
+            this.labelDataShortTerm.AutoSize = true;
+            this.labelDataShortTerm.Location = new System.Drawing.Point(131, 23);
+            this.labelDataShortTerm.Name = "labelDataShortTerm";
+            this.labelDataShortTerm.Size = new System.Drawing.Size(10, 13);
+            this.labelDataShortTerm.TabIndex = 25;
+            this.labelDataShortTerm.Text = ":";
+            // 
             // textBoxShortTerm
             // 
             this.textBoxShortTerm.Location = new System.Drawing.Point(5, 158);
@@ -552,6 +435,15 @@ namespace FinancialProductsWinforms
             this.ShortPreTerm.TabIndex = 2;
             this.ShortPreTerm.Text = "ShortPreTerm";
             this.ShortPreTerm.UseVisualStyleBackColor = true;
+            // 
+            // labelDataPreTerm
+            // 
+            this.labelDataPreTerm.AutoSize = true;
+            this.labelDataPreTerm.Location = new System.Drawing.Point(130, 24);
+            this.labelDataPreTerm.Name = "labelDataPreTerm";
+            this.labelDataPreTerm.Size = new System.Drawing.Size(10, 13);
+            this.labelDataPreTerm.TabIndex = 26;
+            this.labelDataPreTerm.Text = ":";
             // 
             // labelResultString
             // 
@@ -656,6 +548,15 @@ namespace FinancialProductsWinforms
             this.LongTerm.Text = "LongTerm";
             this.LongTerm.UseVisualStyleBackColor = true;
             // 
+            // labelDataLongTerm
+            // 
+            this.labelDataLongTerm.AutoSize = true;
+            this.labelDataLongTerm.Location = new System.Drawing.Point(131, 22);
+            this.labelDataLongTerm.Name = "labelDataLongTerm";
+            this.labelDataLongTerm.Size = new System.Drawing.Size(10, 13);
+            this.labelDataLongTerm.TabIndex = 27;
+            this.labelDataLongTerm.Text = ":";
+            // 
             // textBoxLongTerm
             // 
             this.textBoxLongTerm.Location = new System.Drawing.Point(5, 154);
@@ -752,6 +653,15 @@ namespace FinancialProductsWinforms
             this.CombinateSavingsMonthly.TabIndex = 4;
             this.CombinateSavingsMonthly.Text = "CombinateSavMonthly";
             this.CombinateSavingsMonthly.UseVisualStyleBackColor = true;
+            // 
+            // labelDataCombinateMonthly
+            // 
+            this.labelDataCombinateMonthly.AutoSize = true;
+            this.labelDataCombinateMonthly.Location = new System.Drawing.Point(131, 16);
+            this.labelDataCombinateMonthly.Name = "labelDataCombinateMonthly";
+            this.labelDataCombinateMonthly.Size = new System.Drawing.Size(10, 13);
+            this.labelDataCombinateMonthly.TabIndex = 29;
+            this.labelDataCombinateMonthly.Text = ":";
             // 
             // textBoxCombinateSavingMonthly
             // 
@@ -851,6 +761,15 @@ namespace FinancialProductsWinforms
             this.CombinateMonthWithInflation.TabIndex = 5;
             this.CombinateMonthWithInflation.Text = "CombinateMonthWithInflation";
             this.CombinateMonthWithInflation.UseVisualStyleBackColor = true;
+            // 
+            // labelDataCombinateMonthlyInflation
+            // 
+            this.labelDataCombinateMonthlyInflation.AutoSize = true;
+            this.labelDataCombinateMonthlyInflation.Location = new System.Drawing.Point(131, 24);
+            this.labelDataCombinateMonthlyInflation.Name = "labelDataCombinateMonthlyInflation";
+            this.labelDataCombinateMonthlyInflation.Size = new System.Drawing.Size(10, 13);
+            this.labelDataCombinateMonthlyInflation.TabIndex = 31;
+            this.labelDataCombinateMonthlyInflation.Text = ":";
             // 
             // textBoxCombinateSavingsmonthlyWithInflation
             // 
@@ -967,6 +886,15 @@ namespace FinancialProductsWinforms
             this.CombinateQuarterly.Text = "CombinateQuarterly";
             this.CombinateQuarterly.UseVisualStyleBackColor = true;
             // 
+            // labelDataCombinateQuarterly
+            // 
+            this.labelDataCombinateQuarterly.AutoSize = true;
+            this.labelDataCombinateQuarterly.Location = new System.Drawing.Point(131, 23);
+            this.labelDataCombinateQuarterly.Name = "labelDataCombinateQuarterly";
+            this.labelDataCombinateQuarterly.Size = new System.Drawing.Size(10, 13);
+            this.labelDataCombinateQuarterly.TabIndex = 33;
+            this.labelDataCombinateQuarterly.Text = ":";
+            // 
             // textBoxCombinateSavingsQuarterly
             // 
             this.textBoxCombinateSavingsQuarterly.Location = new System.Drawing.Point(5, 194);
@@ -1082,6 +1010,15 @@ namespace FinancialProductsWinforms
             this.CombinateQuarterlyWithInflation.TabIndex = 7;
             this.CombinateQuarterlyWithInflation.Text = "CombinateQuarterlyWithInflation";
             this.CombinateQuarterlyWithInflation.UseVisualStyleBackColor = true;
+            // 
+            // labelDataQuarterlyInflation
+            // 
+            this.labelDataQuarterlyInflation.AutoSize = true;
+            this.labelDataQuarterlyInflation.Location = new System.Drawing.Point(135, 26);
+            this.labelDataQuarterlyInflation.Name = "labelDataQuarterlyInflation";
+            this.labelDataQuarterlyInflation.Size = new System.Drawing.Size(10, 13);
+            this.labelDataQuarterlyInflation.TabIndex = 35;
+            this.labelDataQuarterlyInflation.Text = ":";
             // 
             // textBoxCombinateQuarterlyWithInflation
             // 
@@ -1282,118 +1219,19 @@ namespace FinancialProductsWinforms
             this.label35.TabIndex = 18;
             this.label35.Text = "Doba sporeni v letech:";
             // 
-            // labelResultCalcul
-            // 
-            this.labelResultCalcul.AutoSize = true;
-            this.labelResultCalcul.Location = new System.Drawing.Point(129, 24);
-            this.labelResultCalcul.Name = "labelResultCalcul";
-            this.labelResultCalcul.Size = new System.Drawing.Size(0, 13);
-            this.labelResultCalcul.TabIndex = 23;
-            // 
-            // labelDataOneTime
-            // 
-            this.labelDataOneTime.AutoSize = true;
-            this.labelDataOneTime.Location = new System.Drawing.Point(129, 22);
-            this.labelDataOneTime.Name = "labelDataOneTime";
-            this.labelDataOneTime.Size = new System.Drawing.Size(10, 13);
-            this.labelDataOneTime.TabIndex = 24;
-            this.labelDataOneTime.Text = ":";
-            // 
-            // labelDataShortTerm
-            // 
-            this.labelDataShortTerm.AutoSize = true;
-            this.labelDataShortTerm.Location = new System.Drawing.Point(131, 23);
-            this.labelDataShortTerm.Name = "labelDataShortTerm";
-            this.labelDataShortTerm.Size = new System.Drawing.Size(10, 13);
-            this.labelDataShortTerm.TabIndex = 25;
-            this.labelDataShortTerm.Text = ":";
-            // 
-            // labelDataPreTerm
-            // 
-            this.labelDataPreTerm.AutoSize = true;
-            this.labelDataPreTerm.Location = new System.Drawing.Point(130, 24);
-            this.labelDataPreTerm.Name = "labelDataPreTerm";
-            this.labelDataPreTerm.Size = new System.Drawing.Size(10, 13);
-            this.labelDataPreTerm.TabIndex = 26;
-            this.labelDataPreTerm.Text = ":";
-            // 
-            // labelDataLongTerm
-            // 
-            this.labelDataLongTerm.AutoSize = true;
-            this.labelDataLongTerm.Location = new System.Drawing.Point(131, 22);
-            this.labelDataLongTerm.Name = "labelDataLongTerm";
-            this.labelDataLongTerm.Size = new System.Drawing.Size(10, 13);
-            this.labelDataLongTerm.TabIndex = 27;
-            this.labelDataLongTerm.Text = ":";
-            // 
-            // labelDataCombinateMonthly
-            // 
-            this.labelDataCombinateMonthly.AutoSize = true;
-            this.labelDataCombinateMonthly.Location = new System.Drawing.Point(131, 16);
-            this.labelDataCombinateMonthly.Name = "labelDataCombinateMonthly";
-            this.labelDataCombinateMonthly.Size = new System.Drawing.Size(10, 13);
-            this.labelDataCombinateMonthly.TabIndex = 29;
-            this.labelDataCombinateMonthly.Text = ":";
-            // 
-            // labelDataCombinateMonthlyInflation
-            // 
-            this.labelDataCombinateMonthlyInflation.AutoSize = true;
-            this.labelDataCombinateMonthlyInflation.Location = new System.Drawing.Point(131, 24);
-            this.labelDataCombinateMonthlyInflation.Name = "labelDataCombinateMonthlyInflation";
-            this.labelDataCombinateMonthlyInflation.Size = new System.Drawing.Size(10, 13);
-            this.labelDataCombinateMonthlyInflation.TabIndex = 31;
-            this.labelDataCombinateMonthlyInflation.Text = ":";
-            // 
-            // labelDataCombinateQuarterly
-            // 
-            this.labelDataCombinateQuarterly.AutoSize = true;
-            this.labelDataCombinateQuarterly.Location = new System.Drawing.Point(131, 23);
-            this.labelDataCombinateQuarterly.Name = "labelDataCombinateQuarterly";
-            this.labelDataCombinateQuarterly.Size = new System.Drawing.Size(10, 13);
-            this.labelDataCombinateQuarterly.TabIndex = 33;
-            this.labelDataCombinateQuarterly.Text = ":";
-            // 
-            // labelDataQuarterlyInflation
-            // 
-            this.labelDataQuarterlyInflation.AutoSize = true;
-            this.labelDataQuarterlyInflation.Location = new System.Drawing.Point(135, 26);
-            this.labelDataQuarterlyInflation.Name = "labelDataQuarterlyInflation";
-            this.labelDataQuarterlyInflation.Size = new System.Drawing.Size(10, 13);
-            this.labelDataQuarterlyInflation.TabIndex = 35;
-            this.labelDataQuarterlyInflation.Text = ":";
-            // 
             // FinancialProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(427, 530);
+            this.ClientSize = new System.Drawing.Size(427, 359);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.labelInflation);
-            this.Controls.Add(this.numericUpDownInflation);
             this.Controls.Add(this.labelInformation);
-            this.Controls.Add(this.labelOutcomeString);
-            this.Controls.Add(this.labelNumberOfDeposits);
-            this.Controls.Add(this.numericUpDownNumberOfDeposits);
             this.Controls.Add(this.labelWarning);
-            this.Controls.Add(this.textBoxResult);
-            this.Controls.Add(this.buttonResult);
-            this.Controls.Add(this.numericUpDownAmountOfInvestment);
-            this.Controls.Add(this.numericUpDownInterestRate);
-            this.Controls.Add(this.comboBoxProducts);
-            this.Controls.Add(this.labelAmountOfInvestment);
-            this.Controls.Add(this.labelInterestRate);
-            this.Controls.Add(this.labelSavingTime);
-            this.Controls.Add(this.numericUpDownSavingTime);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "FinancialProducts";
             this.Text = "Financial products";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSavingTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterestRate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmountOfInvestment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfDeposits)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInflation)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.OneTimeInvest.ResumeLayout(false);
             this.OneTimeInvest.PerformLayout();
@@ -1450,22 +1288,8 @@ namespace FinancialProductsWinforms
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBoxProducts;
-        private System.Windows.Forms.Button buttonResult;
-        private System.Windows.Forms.Label labelSavingTime;
-        private System.Windows.Forms.NumericUpDown numericUpDownSavingTime;
-        private System.Windows.Forms.Label labelInterestRate;
-        private System.Windows.Forms.Label labelAmountOfInvestment;
-        private System.Windows.Forms.NumericUpDown numericUpDownInterestRate;
-        private System.Windows.Forms.NumericUpDown numericUpDownAmountOfInvestment;
-        private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.Label labelWarning;
-        private System.Windows.Forms.NumericUpDown numericUpDownNumberOfDeposits;
-        private System.Windows.Forms.Label labelNumberOfDeposits;
-        private System.Windows.Forms.Label labelOutcomeString;
         private System.Windows.Forms.Label labelInformation;
-        private System.Windows.Forms.NumericUpDown numericUpDownInflation;
-        private System.Windows.Forms.Label labelInflation;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage OneTimeInvest;
         private System.Windows.Forms.TabPage ShortTermInvest;
