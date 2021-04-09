@@ -1155,7 +1155,7 @@ namespace FinancialProductsWinforms
             this.buttonLoanRepayment.TabIndex = 36;
             this.buttonLoanRepayment.Text = "Zjisti hodnotu";
             this.buttonLoanRepayment.UseVisualStyleBackColor = true;
-            this.buttonLoanRepayment.Click += new System.EventHandler(this.buttonLoanRepayment_Click);
+            //this.buttonLoanRepayment.Click += new System.EventHandler(this.buttonLoanRepayment_Click);
             // 
             // numericUpDownInterestRateLoanRepayment
             // 

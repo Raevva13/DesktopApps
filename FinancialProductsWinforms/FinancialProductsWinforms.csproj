@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataHolders\OutcomeHolder.cs" />
     <Compile Include="FinancialProducts.cs">
       <SubType>Form</SubType>
     </Compile>

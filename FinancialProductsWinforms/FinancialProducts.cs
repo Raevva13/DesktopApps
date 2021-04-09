@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialProductsWinforms.DataHolders;
 
 using FinancialProductsWinforms.ProductsHolder;
 
@@ -148,18 +147,18 @@ namespace FinancialProductsWinforms
 
         }
 
-        private void buttonLoanRepayment_Click(object sender, EventArgs e)
-        {
-            OutcomeHolder result = new OutcomeHolder();
+        //private void buttonLoanRepayment_Click(object sender, EventArgs e)
+        //{
+        //    OutcomeHolder result = new OutcomeHolder();
 
-            result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountLoanRepayment.Value);
-            result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeLoanRepayment.Value);
-            result.InterestRate = Convert.ToDouble(numericUpDownInterestRateLoanRepayment.Value);
+        //    result.AmountOfInvestment = Convert.ToDouble(numericUpDownAmountLoanRepayment.Value);
+        //    result.SavingTime = Convert.ToDouble(numericUpDownSavingTimeLoanRepayment.Value);
+        //    result.InterestRate = Convert.ToDouble(numericUpDownInterestRateLoanRepayment.Value);
 
-            //result = ProductionModul.Specimen.LoanRepayment(result.AmountOfInvestment, result.SavingTime, result.InterestRate);
-            textBoxLoanRepayment.Text = result.Outcome.ToString();
-            labelData.Text = result.OutcomeString;
-        }
+        //    //result = ProductionModul.Specimen.LoanRepayment(result.AmountOfInvestment, result.SavingTime, result.InterestRate);
+        //    textBoxLoanRepayment.Text = result.Outcome.ToString();
+        //    labelData.Text = result.OutcomeString;
+        //}
 
 
 
