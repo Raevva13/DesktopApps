@@ -23,7 +23,6 @@ namespace FinancialProductsWinforms
             InitializeComponent();
 
         }
-
        
         private void buttonOneTime_Click(object sender, EventArgs e)
         {
